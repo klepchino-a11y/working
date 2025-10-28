@@ -93,13 +93,20 @@ end)
 
 onLoadingScreenCleared = function()
     loadingScreenFinished = true
-    if pendingOpen then
-        openRegistration()
+    if not identityFinalized then
+        pendingOpen = true
+        if nuiReady then
+            openRegistration()
+        end
     end
 end
 
 -- يستمع الآن فقط للحدث allowOpen المرسل من esx_loadingscreen بعد إغلاق اللودنق سكرين
 AddEventHandler('westside_identity:allowOpen', onLoadingScreenCleared)
+
+AddEventHandler('esx:loadingScreenClosed', function()
+    onLoadingScreenCleared()
+end)
 
 RegisterNUICallback('ready', function(_, cb)
     nuiReady = true
