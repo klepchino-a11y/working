@@ -163,6 +163,14 @@ AddEventHandler('playerSpawned', function()
     tryShutdown('playerSpawned')
 end)
 
+AddEventHandler('esx:onPlayerSpawn', function()
+    debugPrint('event esx:onPlayerSpawn received')
+    if not spawned then
+        spawned = true
+        tryShutdown('esx:onPlayerSpawn')
+    end
+end)
+
 local function handleCloseRequest(eventName)
     local caller = GetInvokingResource and GetInvokingResource() or nil
     debugPrint(('event %s received'):format(eventName), caller or 'nil')
@@ -195,8 +203,16 @@ end)
 
 RegisterNetEvent('westside_identity:spawnPlayer', function()
     debugPrint('event westside_identity:spawnPlayer noted')
+    if not spawned then
+        spawned = true
+        tryShutdown('westside_identity:spawnPlayer')
+    end
 end)
 
 AddEventHandler('onClientResourceStart', function(resource)
     debugPrint(('event onClientResourceStart(%s)'):format(tostring(resource)))
+    if resource == 'westside_identity' then
+        shouldWaitForIdentity = true
+        debugPrint("westside_identity started - waiting for identity", thisResource)
+    end
 end)
