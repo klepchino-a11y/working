@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>WestSide Loading</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/fonts.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <video
+      id="background-video"
+      class="bg"
+      autoplay
+      muted
+      loop
+      playsinline
+    >
+      <source src="vid/play.mp4" type="video/mp4" />
+    </video>
+    <img id="cursor" src="assets/media/cursor.png" alt="cursor" />
+    <div class="overlay">
+      <div class="cornercontainer">
+        <div class="top">
+          <div class="left">
+            <p class="title"> | WestSide المنطقة الغربية</p>
+            <p class="date" id="date"></p>
+            <p class="state" id="clients">0/0</p>
+          </div>
+          <div class="right">
+            <img class="logo" src="assets/media/logo.png" alt="WestSide" />
+          </div>
+        </div>
+
+        <div class="sounds">
+          <div class="switch">
+            <label class="form-switch">
+              <input type="checkbox" id="sounds" />
+              <i></i>
+            </label>
+            <span class="left">تشغيل</span>
+            <span class="right">إيقاف</span>
+          </div>
+          <div class="icon"><span class="icon-symbol">🔊</span></div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="information">
+          <p class="title"> | WestSide المنطقة الغربية</p>
+          <div class="description">
+            <p>
+              أهلًا بكم في سيرفر <strong>WestSide</strong> المعروف باختصار <strong>WS</strong>.
+              هنا نعيش تجربة المنطقة الغربية بروح جماعية مليئة بالتحديات والفعاليات اليومية.
+              نسعى لتقديم مجتمع محترم وممتع حيث يكون الاحترام والتعاون هو الأساس.
+              تأكد من قراءة القوانين والانضمام إلى ديسكورد لمتابعة كل جديد من طاقم WestSide.
+            </p>
+          </div>
+          <div class="buttons">
+            <button id="read-more">
+              اقرأ أكثر
+              <span class="arrow" style="margin-left: 0.4vw; font-size: 0.9vw">→</span>
+            </button>
+            <button id="collapse" style="display: none">شكرًا، عرض أقل</button>
+          </div>
+        </div>
+
+        <div class="loader">
+          <div class="logo">
+            <img class="transparent-logo" src="assets/media/transparent-logo.png" alt="WestSide" />
+            <img class="filled-logo" src="assets/media/filled-logo.png" alt="WestSide" />
+          </div>
+          <p class="progress">0%</p>
+          <p class="description">جارٍ تحميل مدينة WestSide</p>
+        </div>
+
+        <div class="categories">
+          <div class="buttons"></div>
+          <div class="carousel">
+            <div class="socialmedia"></div>
+            <div class="staff">
+              <div class="previous"></div>
+              <div class="cards">
+                <div class="innercards"></div>
+                <div class="pages"></div>
+              </div>
+              <div class="next"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hideoverlay">
+          <div class="bind"></div>
+          إظهار الفيديو
+        </div>
+      </div>
+    </div>
+
+    <script src="assets/script/config.js" type="text/javascript"></script>
+    <script src="assets/script/main.js" type="text/javascript"></script>
+
+    <audio id="music" autoplay>
+      <source src="assets/media/song.mp3" type="audio/mpeg" />
+    </audio>
+  </body>
+</html>
